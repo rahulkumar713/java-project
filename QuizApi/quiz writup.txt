@@ -1,0 +1,74 @@
+create a pojo class for question with id , question, 4 options and
+correct answer.
+create a repo for questions
+create a service class to add/get all/get by id/update by id Questions
+create a controller class
+
+Repeat these for quiz alsso
+make a many to many relation between question id and quiz id, mapped it by listques
+
+mow make a user response to get response from user
+take quiz id with question id then option(answer) as input from user
+check if coreect question id is there for same quiz
+if not error
+else go for score calculation
+
+find score and print it
+
+
+localhost:8082/api/user/submit
+Post response for quiz id 6
+localhost:8082/api/user/submit
+
+{
+   "quizId":"6",
+   "res":[{"questionId":"5","questionResp":"optiona"},{"questionId":"2","questionResp":"optionc"},{"questionId":"10","questionResp":"optionc"},{"questionId":"12","questionResp":"optionb"}]
+}
+
+Post for quiz id 9 with wrong question id
+{
+   "id":"9",
+   "res":[{"id":"1","resp":"optionb"},{"id":"15","resp":"optiond"},{"id":"13","resp":"optionb"},{"id":"16","resp":"optionc"}]
+}
+
+Creating a Quiz
+localhost:8082/api/quiz/
+
+{
+    "quizname":"Quiz5",
+    "listques": [{"id":"1"},{"id":"9"},{"id":"4"},{"id":"7"}]
+}
+
+{
+    "quizname":"Quiz9",
+    "listques": [{"id":"12"},{"id":"15"},{"id":"13"},{"id":"16"}]
+}
+
+Get a Quiz by id
+localhost:8082/api/quiz/9
+
+Get all quiz
+localhost:8082/api/quiz/
+
+Post a question
+localhost:8082/api/questions/
+
+{
+    "question":"Who invented Light bulb?",
+    "optionA":"Albert Einstein",
+    "optionB":"Micheal Faraday",
+    "optionC":"Thomas Edition",
+    "optionD":"Joseph Swan",
+    "answer":"optionC"
+}
+
+update a question - pass localhost:8082/api/questions/id with question in json and use put mapping
+eg localhost:8082/api/questions/11
+{
+    "question": "How many bonnes we have in our ear?",
+    "optionA":"5",
+    "optionB":"6",
+    "optionC":"11",
+    "optionD":"3",
+    "answer":"optionD"
+}
